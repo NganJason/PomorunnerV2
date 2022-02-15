@@ -11,7 +11,7 @@ export default function Tasklist({title}) {
         elevation={12}
       >
         <div className="title-container">
-          <div className="title">12 Feb</div>
+          <div className="title">{title}</div>
         </div>
         <div className="tasks-container">
           <Task />
