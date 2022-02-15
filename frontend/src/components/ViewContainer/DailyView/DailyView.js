@@ -6,7 +6,7 @@ export default function DailyView() {
     return (
       <div className="dailyview-container">
         <div className="tasklist-container">
-          <Tasklist />
+          <Tasklist title={"15 Feb"}/>
         </div>
       </div>
     );
