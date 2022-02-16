@@ -1,9 +1,59 @@
 .task-paper {
+    position: relative;
+
+    box-sizing: border-box;
     flex-shrink: 0;
     height: 4rem;
     width: 90%;
     margin-bottom: 1rem;
-    
+
     border-radius: 8px !important;
-    background-color: rgba($color: #fff, $alpha: 0.7) !important;
+    background-color: rgba($color: #fff, $alpha: 0.5) !important;
+}
+
+.task-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    height: 100%;
+    padding: 0rem 0.5rem;    
+}
+
+.checkbox-grid {
+    justify-self: start;
+
+    opacity: 70%;
+}
+
+.text-grid {
+    align-self: center;
+}
+
+.icon-grid {
+    align-self: center;
+    display: none !important;
+    justify-self: end;
+    
+    opacity: 30%;
+}
+
+.task-paper:hover {
+    .icon-grid {
+        display: block !important;
+        cursor: pointer;
+    }
+
+    .drag-container {
+        display: block !important;
+        cursor: pointer;
+    }
+}
+
+.drag-container {
+    bottom: -10%;
+    left: 49%;
+    position: absolute;
+    
+    display: none;
+    
+    opacity: 30%;
 }
