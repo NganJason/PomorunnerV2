@@ -1,7 +1,9 @@
 import React from "react";
 import Task from "../Task/Task";
 import Paper from "@mui/material/Paper";
+import AddIcon from "@mui/icons-material/Add";
 import "./Tasklist.modules.scss";
+import { Fab, Fade, IconButton } from "@mui/material";
 
 export default function Tasklist({title}) {
     return (
@@ -17,7 +19,13 @@ export default function Tasklist({title}) {
           <Task />
           <Task />
           <Task />
-          <Task />
+        </div>
+        <div className="button-container">
+          <Fade in={true} timeout={{enter: 100, exit: 100}}>
+            <IconButton color="default" size="large">
+              <AddIcon className="add-button" fontSize="large" />
+            </IconButton>
+          </Fade>
         </div>
       </Paper>
     );
