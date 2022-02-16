@@ -1,9 +1,10 @@
 import React from "react";
+import "./Tasklist.modules.scss";
+
+import AddIcon from "@mui/icons-material/Add";
+import { Fade, IconButton } from "@mui/material";
 import Task from "../Task/Task";
 import Paper from "@mui/material/Paper";
-import AddIcon from "@mui/icons-material/Add";
-import "./Tasklist.modules.scss";
-import { Fab, Fade, IconButton } from "@mui/material";
 
 export default function Tasklist({title}) {
     return (
