@@ -8,4 +8,18 @@
 .tasklist-container {
     height: 30rem;
     width: 30rem;
+    margin: auto 0;
+}
+
+.arrow-container{
+    margin: auto;
+    transform: scale(10);
+
+    color: #BDC7C9;
+    cursor: pointer;
+    opacity: 0%;
+}
+
+.arrow-container:hover {
+    opacity: 50%;
 }
