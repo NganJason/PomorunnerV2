@@ -1,8 +1,9 @@
 import "./App.modules.css";
-import ClockContainer from "./components/ClockContainer/ClockContainer"
+import img from "./images/landscape1.jpg";
+
+import ClockContainer from "./components/ClockContainer/ClockContainer";
 import FooterContainer from "./components/FooterContainer/FooterContainer";
 import ViewContainer from "./components/ViewContainer/ViewContainer";
-import img from "./images/landscape1.jpg"
 
 function App() {
   return (
