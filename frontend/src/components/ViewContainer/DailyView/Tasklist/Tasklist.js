@@ -9,7 +9,12 @@ import Paper from "@mui/material/Paper";
 import useTaskList from "./useTaskList";
 
 export default function Tasklist({title}) {
-    const {taskList, addNewTask} = useTaskList()
+    const {
+      taskList, 
+      addNewTask, 
+      editTaskContent, 
+      toggleTaskIsDone
+    } = useTaskList()
 
     return (
       <Paper
@@ -21,8 +26,14 @@ export default function Tasklist({title}) {
           <div className="title">{title}</div>
         </div>
         <div className="tasks-container">
-          {taskList.map((_, idx) => (
-            <Task key={idx}/>
+          {taskList.map((t, idx) => (
+            <Task
+              key={t.id} 
+              idx={idx} 
+              task={t}
+              editTaskContent={editTaskContent}
+              toggleTaskIsDone={toggleTaskIsDone}
+             />
           ))}
         </div>
         <div className="button-container">
