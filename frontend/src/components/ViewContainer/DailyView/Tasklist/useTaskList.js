@@ -1,14 +1,22 @@
 import { useState } from "react";
-import getTaskList from "../../../../controller/TaskList"; 
+import getTaskListHandler from "../../../../handler/TaskListHandler"; 
 
 const useTaskList = () => {
-  const [taskList, setTaskList] = useState(getTaskList().taskList);
+  const [taskList, setTaskList] = useState(getTaskListHandler().taskList);
 
   const addNewTask = () => {
-    setTaskList(getTaskList().addTask());
+    setTaskList(getTaskListHandler().addTask());
   }
 
-  return { taskList, addNewTask };
+  const editTaskContent = (idx, content) => {
+    setTaskList(getTaskListHandler().editTaskContent(idx, content));
+  }
+
+  const toggleTaskIsDone = (idx) => {
+    setTaskList(getTaskListHandler().toggleTaskIsDone(idx));
+  }
+
+  return { taskList, addNewTask, editTaskContent, toggleTaskIsDone };
 };
 
 
