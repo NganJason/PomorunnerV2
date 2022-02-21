@@ -1,7 +1,7 @@
 import React from "react"
 import "./Task.modules.scss"
 
-import { Checkbox, Paper, TextField } from "@mui/material";
+import { Checkbox, TextField } from "@mui/material";
 import DragHandleIcon from "@mui/icons-material/DragHandle";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
@@ -12,7 +12,7 @@ export default function Task({
   toggleTaskIsDone,
 }) {
     return (
-      <Paper className="task-paper" elevation={4}>
+      <div className="task-paper">
         <div className="task-container">
           <Checkbox
             className={"checkbox-grid"}
@@ -35,6 +35,6 @@ export default function Task({
         <div className="drag-container">
           <DragHandleIcon/>
         </div>
-      </Paper>
+      </div>
     );
 }
