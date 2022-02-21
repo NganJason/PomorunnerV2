@@ -17,10 +17,8 @@ export default function Tasklist({title}) {
     } = useTaskList()
 
     return (
-      <Paper
+      <div
         className={"tasklist-paper"}
-        classes={{ root: "tasklist-paper-root" }}
-        elevation={12}
       >
         <div className="title-container">
           <div className="title">{title}</div>
@@ -43,6 +41,6 @@ export default function Tasklist({title}) {
             </IconButton>
           </Fade>
         </div>
-      </Paper>
+      </div>
     );
 }
