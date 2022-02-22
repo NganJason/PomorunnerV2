@@ -1,0 +1,3 @@
+class DailyViewHandler {
+    construct() {}
+}
