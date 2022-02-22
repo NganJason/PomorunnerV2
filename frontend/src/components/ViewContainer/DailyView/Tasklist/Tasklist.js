@@ -4,7 +4,6 @@ import "./Tasklist.modules.scss";
 import AddIcon from "@mui/icons-material/Add";
 import { Fade, IconButton } from "@mui/material";
 import Task from "../Task/Task";
-import Paper from "@mui/material/Paper";
 
 import useTaskList from "./useTaskList";
 
