@@ -7,13 +7,9 @@ import Task from "../Task/Task";
 
 import useTaskList from "./useTaskList";
 
-export default function Tasklist({title}) {
-    const {
-      taskList, 
-      addNewTask, 
-      editTaskContent, 
-      toggleTaskIsDone
-    } = useTaskList()
+export default function Tasklist({title, taskListHandler}) {
+    const { taskList, addNewTask, editTaskContent, toggleTaskIsDone } =
+      useTaskList(taskListHandler);
 
     return (
       <div

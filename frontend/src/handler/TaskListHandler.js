@@ -1,61 +1,49 @@
-import taskCreator from "./TaskHandler";
+import newTaskHandler from "./TaskHandler";
 
-let globalTaskList
+const newTaskListHandler = () => {
+    const taskListHandler = new TaskListHandler(newTaskHandler);
 
-const getTaskListHandler = () => {
-    if (globalTaskList === undefined) {
-      globalTaskList = newTaskList(taskCreator);
-    }
-
-    return globalTaskList;
+    return taskListHandler;
 }
 
-const newTaskList = (taskCreator) => {
-    const taskList = new TaskList(taskCreator);
-
-    return taskList
-}
-
-class TaskList {
-  constructor(
-    taskCreator
-  ) {
+class TaskListHandler {
+  constructor(newTaskHandler) {
     this.taskList = this.#loadTaskList();
-    this.taskCreator = taskCreator
+    this.newTaskHandler = newTaskHandler;
   }
 
   getTaskList() {
-      return this.taskList
+    return this.taskList;
   }
 
   addTask() {
-    this.taskList = [...this.taskList, this.taskCreator()];
+    this.taskList = [...this.taskList, this.newTaskHandler()];
 
-    return this.taskList
+    return this.taskList;
   }
 
   editTaskContent(idx, content) {
-    this.taskList[idx].editContent(content)
+    this.taskList[idx].editContent(content);
 
-    return this.taskList
+    return this.taskList;
   }
 
   toggleTaskIsDone(idx) {
-    this.taskList[idx].toggleIsDone()
+    this.taskList[idx].toggleIsDone();
 
     return this.taskList;
   }
 
   editTaskOrder(currIdx, newIdx) {
     if (newIdx < 0 || newIdx >= this.taskList.length) {
-      return this.taskList
+      return this.taskList;
     }
 
-    this.taskList[currIdx].editOrder(newIdx)
+    this.taskList[currIdx].editOrder(newIdx);
 
-    this.#reorderTaskList(currIdx, newIdx)
+    this.#reorderTaskList(currIdx, newIdx);
 
-    return this.taskList
+    return this.taskList;
   }
 
   #loadTaskList() {
@@ -67,20 +55,20 @@ class TaskList {
   }
 
   #reorderTaskList(currIdx, newIdx) {
-    let idxVal = this.taskList[currIdx]
+    let idxVal = this.taskList[currIdx];
 
     while (currIdx > newIdx) {
-      this.taskList[currIdx] = this.taskList[currIdx-1]
-      currIdx -= 1
+      this.taskList[currIdx] = this.taskList[currIdx - 1];
+      currIdx -= 1;
     }
 
     while (currIdx < newIdx) {
-      this.taskList[currIdx] = this.taskList[currIdx+1]
-      currIdx += 1
+      this.taskList[currIdx] = this.taskList[currIdx + 1];
+      currIdx += 1;
     }
 
-    this.taskList[currIdx] = idxVal
+    this.taskList[currIdx] = idxVal;
   }
 }
 
-export default getTaskListHandler;
+export default newTaskListHandler;

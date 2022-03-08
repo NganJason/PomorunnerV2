@@ -1,14 +1,14 @@
-const taskCreator = (
+const newTaskHandler = (
   order = 0,
   id = "",
   content = "",
   isDone = false,
   date = ""
 ) => {
-  return new Task(id, content, isDone, order, date);
+  return new TaskHandler(id, content, isDone, order, date);
 };
 
-class Task {
+class TaskHandler {
     constructor(
         id = "",
         content = "",
@@ -45,4 +45,4 @@ class Task {
     }
 }
 
-export default taskCreator;
+export default newTaskHandler;

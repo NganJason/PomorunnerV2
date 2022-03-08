@@ -16,24 +16,26 @@ export default function Task({
         <div className="task-container">
           <Checkbox
             className={"checkbox-grid"}
-            checked={task.IsDone}
+            checked={task.isDone}
             disableRipple={true}
-            onChange={()=>{toggleTaskIsDone(idx)}}
+            onChange={() => {
+              toggleTaskIsDone(idx);
+            }}
           />
           <TextField
             className={"text-grid"}
             variant="standard"
             multiline={true}
             InputProps={{ disableUnderline: true }}
-            value={task.Content}
-            onChange={(e)=>{
-              editTaskContent(idx, e.target.value)
+            value={task.content}
+            onChange={(e) => {
+              editTaskContent(idx, e.target.value);
             }}
           />
           <MoreVertIcon className={"icon-grid"} />
         </div>
         <div className="drag-container">
-          <DragHandleIcon/>
+          <DragHandleIcon />
         </div>
       </div>
     );
