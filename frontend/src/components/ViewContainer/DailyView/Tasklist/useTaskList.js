@@ -1,19 +1,22 @@
-import { useState } from "react";
-import getTaskListHandler from "../../../../handler/TaskListHandler"; 
+import { useState, useEffect } from "react";
 
-const useTaskList = () => {
-  const [taskList, setTaskList] = useState(getTaskListHandler().taskList);
+const useTaskList = (taskListHandler) => {
+  const [taskList, setTaskList] = useState(taskListHandler.getTaskList());
+
+  useEffect(() => {
+    setTaskList(taskListHandler.getTaskList())
+  }, [taskListHandler])
 
   const addNewTask = () => {
-    setTaskList(getTaskListHandler().addTask());
+    setTaskList(taskListHandler.addTask());
   }
 
   const editTaskContent = (idx, content) => {
-    setTaskList(getTaskListHandler().editTaskContent(idx, content));
+    setTaskList([...taskListHandler.editTaskContent(idx, content)]);
   }
 
   const toggleTaskIsDone = (idx) => {
-    setTaskList(getTaskListHandler().toggleTaskIsDone(idx));
+    setTaskList([...taskListHandler.toggleTaskIsDone(idx)]);
   }
 
   return { taskList, addNewTask, editTaskContent, toggleTaskIsDone };
