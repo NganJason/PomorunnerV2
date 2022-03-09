@@ -7,17 +7,18 @@ import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import Tasklist from "./Tasklist/Tasklist";
 
 export default function DailyView() {
-    const {taskListHandler, nextTaskListHandler, previousTaskListHandler} = useDailyView()
+    const {taskListHandler, nextTaskListHandler, previousTaskListHandler, taskListTitle} = useDailyView()
+    
     return (
       <div className="dailyview-container">
         <div className="arrow-container">
           <ArrowLeftIcon onClick={previousTaskListHandler} />
         </div>
         <div className="tasklist-container">
-          <Tasklist title={"15 Feb"} taskListHandler={taskListHandler} />
+          <Tasklist title={taskListTitle} taskListHandler={taskListHandler} />
         </div>
         <div className="arrow-container">
-          <ArrowRightIcon onClick={nextTaskListHandler}/>
+          <ArrowRightIcon onClick={nextTaskListHandler} />
         </div>
       </div>
     );

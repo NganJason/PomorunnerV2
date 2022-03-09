@@ -46,7 +46,7 @@ class DailyViewHandler {
   
       return this.taskLists[this.idx];
     } else {
-      this.taskLists.unshift(this.newTaskListHandler);
+      this.taskLists.unshift(this.newTaskListHandler());
 
       return this.taskLists[this.idx];
     }
