@@ -9,7 +9,7 @@ import {Droppable, DragDropContext} from "react-beautiful-dnd"
 
 
 export default function Tasklist({title, taskListHandler}) {
-    const { taskList, addNewTask, editTaskContent, toggleTaskIsDone, reorderTasks } =
+    const { taskList, addNewTask, editTaskContent, toggleTaskIsDone, reorderTasks, deleteTask } =
       useTaskList(taskListHandler);
 
     const onDragEnd = (result) => {
@@ -47,6 +47,7 @@ export default function Tasklist({title, taskListHandler}) {
                       task={t}
                       editTaskContent={editTaskContent}
                       toggleTaskIsDone={toggleTaskIsDone}
+                      deleteTask={deleteTask}
                     />
                   ))}
                   {provided.placeholder}
