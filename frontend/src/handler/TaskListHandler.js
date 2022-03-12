@@ -35,6 +35,10 @@ class TaskListHandler {
   }
 
   editTaskOrder(currIdx, newIdx) {
+    if (currIdx === newIdx) {
+      return this.taskList
+    }
+
     if (newIdx < 0 || newIdx >= this.taskList.length) {
       return this.taskList;
     }

@@ -23,7 +23,17 @@ const useDailyView = () => {
       setTaskListTitle(getDefaultTaskListTitleHandler().getPreviousTitle());
     }
 
-    return { taskListHandler, nextTaskListHandler, previousTaskListHandler, taskListTitle };
+    const reorderTaskList = (srcIdx, dstIdx) => {
+      taskListHandler.editTaskOrder(srcIdx, dstIdx);
+    }
+
+    return {
+      taskListHandler,
+      nextTaskListHandler,
+      previousTaskListHandler,
+      taskListTitle,
+      reorderTaskList,
+    };
     
 };
 
