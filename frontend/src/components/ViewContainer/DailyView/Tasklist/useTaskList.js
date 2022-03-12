@@ -19,7 +19,11 @@ const useTaskList = (taskListHandler) => {
     setTaskList([...taskListHandler.toggleTaskIsDone(idx)]);
   }
 
-  return { taskList, addNewTask, editTaskContent, toggleTaskIsDone };
+  const reorderTasks = (srcIdx, dstIdx) => {
+    setTaskList([...taskListHandler.editTaskOrder(srcIdx, dstIdx)])
+  }
+
+  return { taskList, addNewTask, editTaskContent, toggleTaskIsDone, reorderTasks };
 };
 
 
