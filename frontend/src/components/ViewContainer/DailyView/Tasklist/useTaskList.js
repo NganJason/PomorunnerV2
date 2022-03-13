@@ -23,7 +23,11 @@ const useTaskList = (taskListHandler) => {
     setTaskList([...taskListHandler.editTaskOrder(srcIdx, dstIdx)])
   }
 
-  return { taskList, addNewTask, editTaskContent, toggleTaskIsDone, reorderTasks };
+  const deleteTask = (idx) => {
+    setTaskList([...taskListHandler.deleteTask(idx)])
+  }
+
+  return { taskList, addNewTask, editTaskContent, toggleTaskIsDone, reorderTasks, deleteTask };
 };
 
 

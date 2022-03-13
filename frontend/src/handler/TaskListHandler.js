@@ -50,6 +50,14 @@ class TaskListHandler {
     return this.taskList;
   }
 
+  deleteTask(idx) {
+    if (idx >= 0 || idx < this.taskList.length) {
+      this.taskList.splice(idx, 1);
+    }
+
+    return this.taskList
+  }
+
   #loadTaskList() {
     return this.#loadDefaultTaskList();
   }
