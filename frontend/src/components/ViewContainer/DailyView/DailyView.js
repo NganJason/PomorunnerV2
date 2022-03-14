@@ -4,7 +4,7 @@ import useDailyView from "./useDailyView";
 
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import Tasklist from "../Tasklist/Tasklist";
+import Tasklist from "../TaskList/TaskList";
 
 export default function DailyView() {
     const {taskListHandler, nextTaskListHandler, previousTaskListHandler, taskListTitle} = useDailyView()
